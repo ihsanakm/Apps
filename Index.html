@@ -1,0 +1,50 @@
+<Html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="John Doe">
+    <title>
+        Digital Clock
+    </title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="clock">
+                <span id="Hrs">00</span>
+                <span>:</span>
+                <span id="Min">00</span>
+                <span>:</span>
+                <span id="Sec">00</span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        let Hrs = document.getElementById("Hrs");
+        let Min = document.getElementById("Min");
+        let Sec = document.getElementById("Sec");
+
+       
+
+        setInterval(() => {
+            let currentTime = new Date();
+            
+
+            Hrs.innerHTML = (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours();
+            Min.innerHTML = (currentTime.getMinutes() < 10 ? "0" : "") + currentTime.getMinutes();
+            Sec.innerHTML = (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds();
+
+
+        }, 1000)
+    </script>
+
+</body>
+
+</Html>
